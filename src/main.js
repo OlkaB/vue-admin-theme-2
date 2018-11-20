@@ -13,6 +13,10 @@ Vue.config.productionTip = false;
 // Global filters
 import "./filters/filters";
 
+//Global components
+import GlobalComponents from './plugins/globalComponents';
+Vue.use(GlobalComponents);
+
 new Vue({
   router,
   store,

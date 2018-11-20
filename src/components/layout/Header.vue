@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-navigation-drawer v-model="navDrawerIsVisible" :mini-variant.sync="navDrawerIsMini" app>
+        <v-navigation-drawer v-model="navDrawerIsVisible" app>
             <v-toolbar flat class="transparent">
                 <v-list class="pa-0">
                     <v-list-tile avatar>
@@ -61,7 +61,7 @@
 
         <v-toolbar color="primary" dark app>
             <!-- <v-toolbar-side-icon @click="navDrawerIsVisible = !navDrawerIsVisible"></v-toolbar-side-icon> -->
-            <v-toolbar-side-icon @click="navDrawerIsMini = !navDrawerIsMini"></v-toolbar-side-icon>
+            <v-toolbar-side-icon @click="navDrawerIsVisible = !navDrawerIsVisible"></v-toolbar-side-icon>
             <v-breadcrumbs :items="breadCrmb" divider=">"></v-breadcrumbs>
             <v-spacer></v-spacer>
             <v-btn icon>
@@ -89,7 +89,6 @@
         data () {
             return {
                 navDrawerIsVisible: true,
-                navDrawerIsMini: false,
                 breadCrmb: [
                     {
                         text: 'Dashboard',

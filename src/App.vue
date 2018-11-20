@@ -25,3 +25,21 @@
         }
     }
 </script>
+
+<style lang="scss">
+    .text-muted {
+        color: rgba(0,0,0,0.4);
+    }
+    .uppercase {
+        text-transform: uppercase;
+    }
+    .pull-left {
+        float: left !important;
+    }
+    .pull-right {
+        float: right !important;
+    }
+    .v-content {
+        background-color: #e2e2e2;
+    }
+</style>
