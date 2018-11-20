@@ -1,30 +1,39 @@
 <template>
-    <v-card>
-        <v-card-title primary-title>
-            <v-layout row wrap>
-                <v-flex>
-                    <small class="text-muted uppercase">products sold</small>
-                    <v-icon class="pull-right" color="accent">mdi-bell</v-icon>
+        <v-card>
+            <v-card-title primary-title>
+                <v-layout row wrap>
+                    <v-flex>
+                        <small class="text-muted uppercase" v-if="cardTitle">{{cardTitle}}</small>
+                        <small v-else>&nbsp;</small>
+                        <v-icon class="pull-right" v-bind:color="cardIconColor" v-if="cardIcon">mdi-{{cardIcon}}</v-icon>
 
-                    <v-layout row align-center>
-                            <h1 class="display-2 font-weight-medium" v-bind:class="">
-                                125.58%
+                        <v-layout row align-center>
+                            <h1 class="display-2 font-weight-medium" v-bind:class="mainInfoColor + '--text'">
+                                {{mainInfo}}
                             </h1>
-                            <div class="ma-4 success--text">
-                                <span>9%</span>
-                                <v-icon color="success" small>mdi-arrow-up-thick</v-icon>
+                            <div class="ml-4">
+                                <slot name="mainInfoAddOn"></slot>
                             </div>
-                    </v-layout>
+                        </v-layout>
 
-                    <small class="text-muted">something else</small>
-                </v-flex>
-            </v-layout>
-        </v-card-title>
-    </v-card>
+                        <small class="text-muted" v-if="cardFooterTxt">{{cardFooterTxt}}</small>
+                        <small v-else>&nbsp;</small>
+                    </v-flex>
+                </v-layout>
+            </v-card-title>
+        </v-card>
 </template>
 
 <script>
     export default {
-        name: 'WidgetSmall'
+        name: 'WidgetSmall',
+        props: [
+            'cardTitle',
+            'cardIcon',
+            'cardIconColor',
+            'mainInfo',
+            'mainInfoColor',
+            'cardFooterTxt'
+        ]
     }
 </script>
