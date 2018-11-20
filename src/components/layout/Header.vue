@@ -81,7 +81,7 @@
 </template>
 
 <script>
-    import { menuItemsData } from '../../mixins/MenuItems';
+    import { menuItemsData } from '@/mixins/MenuItems';
 
     export default {
         name: 'Header',

@@ -1,6 +1,9 @@
 <template>
   <div class="about">
     <v-layout row wrap>
+      <v-flex lg12>
+        <h2>Widget small</h2>
+      </v-flex>
       <v-flex sm12 md6 lg3>
         <app-widget-small class="ma-2"
           :cardTitle="'sprzedaż produktu'"
@@ -11,12 +14,12 @@
           :mainInfoNumIndicator="'0.0'"
         ></app-widget-small>
       </v-flex>
-      <v-flex sm12 md6 lg3>
+      <v-flex sm12 md6 lg4>
         <app-widget-small class="ma-2"
             :cardTitle="'zamówienia produktu'"
             :cardIcon="'alarm-snooze'"
             :cardIconColor="'success'"
-            :mainInfo="'2591.23 zł'"
+            :mainInfo="'259.23 zł'"
         >
           <div class="success--text" slot="mainInfoAddOn">
             <span>9%</span>
@@ -24,7 +27,7 @@
           </div>
         </app-widget-small>
       </v-flex>
-      <v-flex sm12 md6 lg3>
+      <v-flex sm12 md6 lg2>
         <app-widget-small class="ma-2"
           :cardIcon="'heart'"
           :cardIconColor="'success'"
@@ -48,6 +51,40 @@
       </v-flex>
     </v-layout>
 
+    <v-layout row wrap>
+      <v-flex lg12>
+        <h2>Widget compare</h2>
+      </v-flex>
+      <v-flex sm12 md6 lg4>
+        <app-widget-compare class="ma-2"
+          :cardColor="'success'"
+          :cardTitle="'Całkowita sprzedaż'"
+          :cardFooterTxt="'4% higher than last month'"
+          :progressVal="'63'"
+          :data="[{title: 'Overall Sales', value: 2456}, {title: 'Today\'s', value: 756}, {title: 'Monthly', value: 1256}]"
+        ></app-widget-compare>
+      </v-flex>
+
+      <v-flex sm12 md6 lg4>
+        <app-widget-compare class="ma-2"
+          :cardColor="'accent'"
+          :cardTitle="'Liczba wejśc na stronę'"
+          :cardFooterTxt="'* unikatowych'"
+          :progressVal="'78'"
+          :data="[{title: 'Overall entrances', value: 789}, {title: 'Today\'s', value: 56}, {title: 'Monthly', value: 230}]"
+        ></app-widget-compare>
+      </v-flex>
+
+      <v-flex sm12 md6 lg4>
+        <app-widget-compare class="ma-2"
+          :cardColor="'purple'"
+          :cardTitle="'Liczba wejśc na stronę'"
+          :cardFooterTxt="'* lorem ipsum'"
+          :progressVal="'25'"
+          :data="[{title: 'Overall entrances', value: 65}, {title: 'Today\'s', value: 23}, {title: 'Monthly', value: 43}]"
+        ></app-widget-compare>
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 

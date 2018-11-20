@@ -7,9 +7,9 @@
 </template>
 
 <script>
-    import Header from './components/layout/Header';
-    import Content from './components/layout/Content';
-    import Footer from './components/layout/Footer';
+    import Header from '@/components/layout/Header';
+    import Content from '@/components/layout/Content';
+    import Footer from '@/components/layout/Footer';
 
     export default {
         name: 'App',
@@ -29,6 +29,9 @@
 <style lang="scss">
     .text-muted {
         color: rgba(0,0,0,0.4);
+    }
+    .text-muted--dark {
+        color: rgba(0,0,0,0.5);
     }
     .uppercase {
         text-transform: uppercase;
