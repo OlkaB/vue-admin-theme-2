@@ -6,7 +6,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         app: {
-            pageLoaderIsVisible: false
+            pageLoaderIsVisible: false,
+            leftNavBarIsVisible: true
         },
         endpoints: {
           userdata: "https://api.myjson.com/bins/9rtp2.json"
@@ -34,6 +35,9 @@ export default new Vuex.Store({
         },
         appLoaderVisibility: state => {
             return state.app.pageLoaderIsVisible;
+        },
+        leftNavBarVisibility: state => {
+            return state.app.leftNavBarIsVisible;
         }
     },
     mutations: {
@@ -45,6 +49,9 @@ export default new Vuex.Store({
         },
         appLoaderVisibility: (state, isVisible) => {
             state.app.pageLoaderIsVisible = isVisible;
+        },
+        leftNavBarVisibility: (state, isVisible) => {
+            state.app.leftNavBarIsVisible = isVisible;
         }
     },
     actions: {}
