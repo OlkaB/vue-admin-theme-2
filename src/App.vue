@@ -2,6 +2,7 @@
     <v-app>
         <app-header></app-header>
         <app-content></app-content>
+        <app-loading></app-loading>
         <app-footer></app-footer>
     </v-app>
 </template>
@@ -18,10 +19,16 @@
             'app-content': Content,
             'app-footer': Footer
         },
-        data() {
-            return {
-                //
-            }
+        mounted() {
+            // get user data and permissions
+            let store = this.$store;
+            this.$http.get(this.$store.getters.endpoint('userdata'))
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    this.$store.commit('setUser', data.users[1])
+                });
         }
     }
 </script>

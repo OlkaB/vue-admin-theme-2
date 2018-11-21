@@ -48,7 +48,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .comparators .flex:nth-child(1),
     .comparators .flex:nth-child(2) {
         border-right: 1px solid rgba(0,0,0,0.4);

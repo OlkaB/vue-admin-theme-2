@@ -1,12 +1,15 @@
 import Vue from 'vue'
 import 'babel-polyfill'
 import './plugins/vuetify'
-import App from './App.vue'
 import router from './router'
+import VueResource from 'vue-resource'
+Vue.use(VueResource);
 import store from './store'
 import './registerServiceWorker'
+import App from './App.vue'
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import '@mdi/font/css/materialdesignicons.css'
+import VueGoogleCharts from 'vue-google-charts'
 
 Vue.config.productionTip = false;
 
@@ -18,8 +21,7 @@ import GlobalComponents from './plugins/globalComponents';
 Vue.use(GlobalComponents);
 
 // plugins
-import VueGoogleCharts from 'vue-google-charts' 
-Vue.use(VueGoogleCharts)
+Vue.use(VueGoogleCharts);
 
 new Vue({
   router,

@@ -141,7 +141,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .text-primary,
     .text-primary .v-icon{
         color: #3f51b5 !important;
