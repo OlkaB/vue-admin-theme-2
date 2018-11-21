@@ -1,18 +1,36 @@
 <template>
     <div>
         <v-navigation-drawer v-model="navDrawerIsVisible" app>
-            <v-toolbar flat class="transparent">
-                <v-list class="pa-0">
-                    <v-list-tile avatar>
-                        <v-list-tile-avatar>
-                            <img src="https://randomuser.me/api/portraits/men/85.jpg">
-                        </v-list-tile-avatar>
+            <v-toolbar flat class="transparent nav-header" color="secondary" height="150">
+                <!--<img :src="require('@/assets/images/logo.png')" class="img-responsive logo"><img>-->
+                <div class="py-3">
+                    <router-link to="/wylogowano">
+                        <h2 class="headline font-weight-light white--text">SYS | Company</h2>
+                    </router-link>
 
-                        <v-list-tile-content>
-                            <v-list-tile-title>John Leider</v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
-                </v-list>
+                    <p class="title font-weight-medium pt-3 mb-0 white--text">{{ userFullName }}</p>
+                    <v-menu offset-y class="user-profile__menu">
+                        <v-list-tile slot="activator" >
+                            <span class="font-weight-light user-profile__menu__activator">Profil <v-icon>mdi-menu-down</v-icon></span>
+                        </v-list-tile>
+                        <v-list>
+                            <v-list-tile>
+                                <v-list-tile-title>
+                                    <router-link to="/profil">
+                                        <v-icon>mdi-account</v-icon> mój profil
+                                    </router-link>
+                                </v-list-tile-title>
+                            </v-list-tile>
+                            <v-list-tile>
+                                <v-list-tile-title>
+                                    <router-link to="/wylogowano">
+                                        <v-icon>mdi-logout-variant</v-icon> wyloguj
+                                    </router-link>
+                                </v-list-tile-title>
+                            </v-list-tile>
+                        </v-list>
+                    </v-menu>
+                </div>
             </v-toolbar>
 
             <v-divider></v-divider>
@@ -54,28 +72,35 @@
                     </v-list-group>
                 </template>
 
-
             </v-list>
         </v-navigation-drawer>
 
 
         <v-toolbar color="primary" dark app>
-            <!-- <v-toolbar-side-icon @click="navDrawerIsVisible = !navDrawerIsVisible"></v-toolbar-side-icon> -->
+        <!-- <v-toolbar-side-icon @click="navDrawerIsVisible = !navDrawerIsVisible"></v-toolbar-side-icon> -->
             <v-toolbar-side-icon @click="navDrawerIsVisible = !navDrawerIsVisible"></v-toolbar-side-icon>
-            <v-breadcrumbs :items="breadCrmb" divider=">"></v-breadcrumbs>
+
+            <v-breadcrumbs class="hidden-xs-only" :items="breadCrmb" divider="/"></v-breadcrumbs>
             <v-spacer></v-spacer>
-            <v-btn icon>
-                <v-icon>mdi-account</v-icon>
-            </v-btn>
-            <v-btn icon>
-                <v-badge color="accent" >
-                    <span slot="badge">6</span>
-                    <v-icon>mdi-bell</v-icon>
-                </v-badge>
-            </v-btn>
-            <v-btn icon>
-                <v-icon>mdi-logout-variant</v-icon>
-            </v-btn>
+
+            <router-link to="/profil">
+                <v-btn icon>
+                    <v-icon>mdi-account</v-icon>
+                </v-btn>
+            </router-link>
+            <router-link to="/dashboard">
+                <v-btn icon>
+                    <v-badge color="accent" >
+                        <span slot="badge">6</span>
+                        <v-icon>mdi-bell</v-icon>
+                    </v-badge>
+                </v-btn>
+            </router-link>
+            <router-link to="/wylogowano">
+                <v-btn icon>
+                    <v-icon>mdi-logout-variant</v-icon>
+                </v-btn>
+            </router-link>
         </v-toolbar>
     </div>
 </template>
@@ -107,6 +132,11 @@
                     }
                 ],
             }
+        },
+        computed: {
+            userFullName () {
+                return this.$store.getters.userFullName;
+            }
         }
     }
 </script>
@@ -119,4 +149,30 @@
     .no-submenu .v-list__group__header__append-icon {
         display: none;
     }
+    .logo {
+        max-width: 150px;
+    }
+    .user-profile__menu .v-list__tile {
+        height: auto;
+        padding: 0;
+        font-size: 14px;
+    }
+    .user-profile__menu__activator,
+    .user-profile__menu .v-icon {
+        color: rgba(255,255,255,.7);
+    }
+    .v-breadcrumbs {
+        margin-left: 70px;
+    }
+    .v-breadcrumbs .v-breadcrumbs__item {
+        color: rgba(255,255,255,0.7);
+    }
+    .theme--dark.v-breadcrumbs .v-breadcrumbs__item--disabled {
+        color: rgba(255,255,255,0.9);
+        font-weight: 500;
+    }
+    /*.nav-header {*/
+        /*background: url("~@/assets/images/header-profile-blue.png") center no-repeat;*/
+        /*background-size: cover;*/
+    /*}*/
 </style>

@@ -45,4 +45,12 @@
     .v-content {
         background-color: #e2e2e2;
     }
+    .img-responsive {
+        width: 100%;
+        height: auto;
+    }
+    a:-webkit-any-link {
+        text-decoration: none;
+        color: initial;
+    }
 </style>
