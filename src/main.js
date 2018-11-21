@@ -17,6 +17,10 @@ import "./filters/filters";
 import GlobalComponents from './plugins/globalComponents';
 Vue.use(GlobalComponents);
 
+// plugins
+import VueGoogleCharts from 'vue-google-charts' 
+Vue.use(VueGoogleCharts)
+
 new Vue({
   router,
   store,

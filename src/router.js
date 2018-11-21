@@ -32,6 +32,11 @@ export default new Router({
         path: '/sales',
         name: 'sales',
         component: () => import(/* webpackChunkName: "about" */ './views/Sales.vue')
+    },
+    {
+        path: '/charts',
+        name: 'charts',
+        component: () => import(/* webpackChunkName: "about" */ './views/Charts.vue')
     }
   ]
 })

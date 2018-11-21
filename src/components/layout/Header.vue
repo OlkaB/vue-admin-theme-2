@@ -17,7 +17,7 @@
 
             <v-divider></v-divider>
 
-            <v-list @click="">
+            <v-list>
                 <template v-for="menuItem in menuItems"
                           >
                     <v-list-group v-if="menuItem.subItems && menuItem.subItems.length > 0"
@@ -31,7 +31,7 @@
                             </v-list-tile-content>
                         </v-list-tile>
 
-                        <v-list-tile v-for="subItem in menuItem.subItems" :to="{path: subItem.route}">
+                        <v-list-tile :key="subItem.title" v-for="subItem in menuItem.subItems" :to="{path: subItem.route}">
                             <v-list-tile-action>
                                 <v-icon>{{ subItem.icon }}</v-icon>
                             </v-list-tile-action>
@@ -42,7 +42,7 @@
                     </v-list-group>
 
 
-                    <v-list-group :key="abcd" class="no-submenu"v-else>
+                    <v-list-group :key="menuItem.title" class="no-submenu" v-else>
                         <v-list-tile slot="activator" :to="{path: menuItem.route}" active-class="text-primary">
                             <v-list-tile-action>
                                 <v-icon>{{ menuItem.icon }}</v-icon>

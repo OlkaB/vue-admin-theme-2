@@ -9,6 +9,11 @@ export const menuItemsData = {
                     active: true,
                 },
                 {
+                    icon: 'mdi-chart-bar',
+                    title: 'Charts',
+                    route: '/charts',
+                },
+                {
                     icon: 'mdi-android',
                         title: 'About',
                     subItems: [
