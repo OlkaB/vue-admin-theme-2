@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer v-model="navDrawerIsVisible" app>
+    <v-navigation-drawer v-model="leftNavBarIsVisible" app>
         <v-toolbar flat class="transparent nav-header" color="secondary" height="150">
             <!--<img :src="require('@/assets/images/logo.png')" class="img-responsive logo"><img>-->
             <div class="py-3">
@@ -85,9 +85,35 @@
             userFullName () {
                 return this.$store.getters.userFullName;
             },
-            navDrawerIsVisible() {
+            leftNavBarIsVisible() {
                 return this.$store.getters.leftNavBarVisibility;
             }
         }
     }
 </script>
+
+<style lang="scss">
+    .text-primary,
+    .text-primary .v-icon{
+        color: #3f51b5 !important;
+    }
+    .no-submenu .v-list__group__header__append-icon {
+        display: none !important;
+    }
+    .logo {
+        max-width: 150px;
+    }
+    .user-profile__menu .v-list__tile {
+        height: auto;
+        padding: 0;
+        font-size: 14px;
+    }
+    .user-profile__menu__activator,
+    .user-profile__menu .v-icon {
+        color: rgba(255,255,255,.7);
+    }
+    /*.nav-header {*/
+    /*background: url("~@/assets/images/header-profile-blue.png") center no-repeat;*/
+    /*background-size: cover;*/
+    /*}*/
+</style>

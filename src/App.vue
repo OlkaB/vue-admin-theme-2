@@ -56,7 +56,7 @@
         width: 100%;
         height: auto;
     }
-    a:-webkit-any-link {
+    a {
         text-decoration: none;
         color: initial;
     }

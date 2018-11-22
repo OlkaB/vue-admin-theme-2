@@ -20,7 +20,6 @@
         },
         data () {
             return {
-                navDrawerIsVisible: true,
                 breadCrmb: [
                     {
                         text: 'Dashboard',

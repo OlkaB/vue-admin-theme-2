@@ -1,7 +1,7 @@
 <template>
     <v-toolbar color="primary" dark app>
-        <!-- <v-toolbar-side-icon @click="navDrawerIsVisible = !navDrawerIsVisible"></v-toolbar-side-icon> -->
-        <v-toolbar-side-icon @click="navDrawerIsVisible"></v-toolbar-side-icon>
+        <!-- <v-toolbar-side-icon @click="toggleLeftNavBarVisibility = !navDrawerIsVisible"></v-toolbar-side-icon> -->
+        <v-toolbar-side-icon @click="toggleLeftNavBarVisibility"></v-toolbar-side-icon>
 
         <v-breadcrumbs class="hidden-xs-only" :items="breadCrmb" divider="/"></v-breadcrumbs>
         <v-spacer></v-spacer>
@@ -52,10 +52,23 @@
             }
         },
         methods: {
-            navDrawerIsVisible() {
+            toggleLeftNavBarVisibility() {
                 const leftNavBarVisibility = this.$store.getters.leftNavBarVisibility;
                 this.$store.commit('leftNavBarVisibility', !leftNavBarVisibility);
             }
         }
     }
 </script>
+
+<style lang="scss">
+    .v-breadcrumbs {
+        margin-left: 70px;
+    }
+    .v-breadcrumbs a.v-breadcrumbs__item {
+        color: rgba(255,255,255,0.7);
+    }
+    .theme--dark.v-breadcrumbs .v-breadcrumbs__item--disabled {
+        color: rgba(255,255,255,0.9);
+        font-weight: 500;
+    }
+</style>
