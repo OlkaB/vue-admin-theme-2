@@ -45,7 +45,8 @@
         <app-widget-small class="ma-2"
             :cardTitle="'ilość akcji marketingowych'"
             :mainInfoColor="'accent'"
-            :cardFooterTxt="'ostatnie 12 m-cy'"
+            :badgeTitle="'12 m-cy'"
+            :badgeColor="'success'"
             :mainInfo="'125'"
         ></app-widget-small>
       </v-flex>

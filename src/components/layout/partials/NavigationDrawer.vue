@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer v-model="leftNavBarIsVisible" app>
+    <v-navigation-drawer :value="leftNavBarIsVisible" app>
         <v-toolbar flat class="transparent nav-header" color="secondary" height="150">
             <!--<img :src="require('@/assets/images/logo.png')" class="img-responsive logo"><img>-->
             <div class="py-3">

@@ -6,6 +6,9 @@
                         <small class="text-muted uppercase" v-if="cardTitle">{{cardTitle}}</small>
                         <small v-else>&nbsp;</small>
                         <v-icon class="pull-right" v-bind:color="cardIconColor" v-if="cardIcon">mdi-{{cardIcon}}</v-icon>
+                        <o-badge class="pull-right" v-if="badgeTitle" :badgeColor="badgeColor" :class="badgeClass ? badgeClass : ''">
+                            {{badgeTitle}}
+                        </o-badge>
 
                         <v-layout row align-center>
                             <h1 class="display-2 font-weight-medium" v-bind:class="mainInfoColor + '--text'">
@@ -31,6 +34,9 @@
             'cardTitle',
             'cardIcon',
             'cardIconColor',
+            'badgeTitle',
+            'badgeColor',
+            'badgeClass',
             'mainInfo',
             'mainInfoColor',
             'cardFooterTxt'
