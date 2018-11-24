@@ -86,6 +86,24 @@
         ></app-widget-compare>
       </v-flex>
     </v-layout>
+
+    
+    <v-layout row wrap>
+      <v-card>
+        <o-anim-number :number="'1235.45'" :duration="'1000'" :dataFilter="'decimal'"></o-anim-number>
+      </v-card>
+    </v-layout>
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    dataX() {
+      
+    }
+  }
+}
+</script>
+
 

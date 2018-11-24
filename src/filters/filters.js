@@ -31,9 +31,6 @@ Vue.filter("price", (number, currency) => {
 });
 
 Vue.filter("number", number => {
-    if(typeof number !== "number") {
-        return number;
-    }
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ").replace(/\./, ',');
 });
 
@@ -67,15 +64,11 @@ Vue.filter("JSONdecode", json => {
 });
 
 Vue.filter("decimal", (number, decimalPlaces, decimalSeparator) => {
-    if(typeof number !== "number") {
-        return number;
-    }
-
     //set default options
     let separator = decimalSeparator ? decimalSeparator : ',';
     let places = decimalPlaces ? decimalPlaces : 0;
 
-    return number.toFixed(places).replace('.', separator);
+    return (parseFloat(number)).toFixed(places).replace('.', separator);
 });
 
 Vue.filter("percent", (number, decimalPlaces, decimalSeparator, usePercentSign) => {
@@ -126,8 +119,8 @@ Vue.filter("lowercase", string => {
 
 Vue.filter("titlecase", string => {
     if(typeof string !== "string") {
-        return string.charAt(0).toUpperCase() + string.slice(1);
+        return string;
     }
-
-
+    
+    return string.charAt(0).toUpperCase() + string.slice(1);
 });
