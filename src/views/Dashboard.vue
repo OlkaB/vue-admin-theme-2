@@ -10,17 +10,16 @@
           :cardIcon="'bell'"
           :cardIconColor="'accent'"
           :cardFooterTxt="'za ostatnie 30 dni | per os.'"
-          :mainInfo="'125.58%'"
           :mainInfoNumIndicator="'0.0'"
-        ></app-widget-small>
+        ><o-anim-number :number="'125.58'" :duration="'500'" :dataFilter="'decimal'"></o-anim-number>%</app-widget-small>
       </v-flex>
       <v-flex sm12 md6 lg4>
         <app-widget-small class="ma-2"
             :cardTitle="'zamówienia produktu'"
             :cardIcon="'alarm-snooze'"
             :cardIconColor="'success'"
-            :mainInfo="'259.23 zł'"
         >
+          <o-anim-number :number="'259.23'" :duration="'500'" :dataFilter="'decimal'"></o-anim-number> zł
           <div class="success--text" slot="mainInfoAddOn">
             <span>9%</span>
             <v-icon color="success" small>mdi-arrow-up-thick</v-icon>
@@ -32,9 +31,9 @@
           :cardIcon="'heart'"
           :cardIconColor="'success'"
           :cardFooterTxt="'YtY'"
-          :mainInfo="'648'"
 
         >
+          648
           <div class="error--text" slot="mainInfoAddOn">
             <span>9%</span>
             <v-icon color="error" small>mdi-arrow-down-thick</v-icon>
@@ -47,8 +46,7 @@
             :mainInfoColor="'accent'"
             :badgeTitle="'12 m-cy'"
             :badgeColor="'success'"
-            :mainInfo="'125'"
-        ></app-widget-small>
+        >125</app-widget-small>
       </v-flex>
     </v-layout>
 
@@ -89,9 +87,6 @@
 
     
     <v-layout row wrap>
-      <v-card>
-        <o-anim-number :number="'1235.45'" :duration="'1000'" :dataFilter="'decimal'"></o-anim-number>
-      </v-card>
     </v-layout>
   </div>
 </template>

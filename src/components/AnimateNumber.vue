@@ -1,8 +1,5 @@
 <template>
-    <div class="o-animate-num">
-        <span>{{displayNumber | decimal(this.decimalPlaces) | number }}</span>
-        <br>     
-    </div>
+    <span class="o-animate-num">{{displayNumber | decimal(this.decimalPlaces) | number }}</span>
 </template>
 
 <script>
@@ -11,7 +8,7 @@ export default {
     data: function(){
         return {
             initalNum: 0,
-            displayNumber: null,
+            displayNumber: 0,
             interval:false,
         }
     },
