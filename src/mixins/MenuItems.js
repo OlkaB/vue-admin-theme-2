@@ -24,8 +24,8 @@ export const menuItemsData = {
                 },
                 {
                     icon: 'mdi-briefcase-check',
-                    title: 'Sales',
-                    route: '/sprzedaz',
+                    title: 'Form',
+                    route: '/formularz',
                 },
                 {
                     icon: 'mdi-camera',

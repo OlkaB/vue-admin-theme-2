@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import 'babel-polyfill'
 import './plugins/vuetify'
-import router from './router'
+import router from './router/router'
 import VueResource from 'vue-resource'
 Vue.use(VueResource);
 import store from './store'

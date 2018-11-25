@@ -29,6 +29,9 @@ export default {
     mounted:function(){
         this.initalNum = 1;
     },
+    beforeDestroy: function() {
+        clearInterval(this.$options.interval);
+    },
     watch:{
         initalNum: function() {  
             clearInterval(this.$options.interval); //required to stop the interval after update

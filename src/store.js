@@ -16,7 +16,7 @@ export default new Vuex.Store({
             username: '',
             name: '',
             surname: '',
-            role: ''
+            role: 'admin',
         }
     },
     getters: {
@@ -38,7 +38,7 @@ export default new Vuex.Store({
         },
         leftNavBarVisibility: state => {
             return state.app.leftNavBarIsVisible;
-        }
+        },
     },
     mutations: {
         setUser: (state, userData) => {
