@@ -1,23 +1,25 @@
 <template>
     <v-app>
-        <app-header></app-header>
-        <app-content></app-content>
-        <app-loading></app-loading>
-        <app-footer></app-footer>
+        <doz-header/>
+        <doz-content/>
+        <doz-loading-overlay/>
+        <doz-footer/>
     </v-app>
 </template>
 
 <script>
-    import Header from '@/components/layout/Header';
-    import Content from '@/components/layout/Content';
-    import Footer from '@/components/layout/Footer';
+    import Header from '@/components/layout/TheHeader';
+    import Content from '@/components/layout/TheContent';
+    import Footer from '@/components/layout/TheFooter';
+    import LoaderOverlay from '@/components/LoaderOverlay';
 
     export default {
         name: 'App',
         components: {
-            'app-header': Header,
-            'app-content': Content,
-            'app-footer': Footer
+            'doz-header': Header,
+            'doz-content': Content,
+            'doz-footer': Footer,
+            'doz-loading-overlay': LoaderOverlay
         },
         mounted() {
             // get user data and permissions
@@ -54,6 +56,12 @@
     }
     .img-responsive {
         width: 100%;
+        height: auto;
+    }
+    .img-responsive-full {
+        max-width: 100%;
+        height: 100%;
+        width: auto;
         height: auto;
     }
     a {

@@ -1,17 +1,26 @@
 <template>
-    <span class="o-badge white--text" v-bind:class="badgeColor + ' ' + badgeClass">
+    <span class="doz-badge--rect white--text" v-bind:class="badgeColor + ' ' + badgeClass">
         <slot></slot>
     </span>
 </template>
 
 <script>
     export default {
-        props: ['badgeColor', 'badgeClass']
+        props: {
+            badgeColor: {
+                type: String,
+                required: false,
+            },
+            badgeClass: {
+                type: String,
+                required: false,
+            }
+        }
     }
 </script>
 
 <style lang="scss" scoped>
-    .o-badge {
+    .doz-badge--rect {
         display: inline-block;
         padding: .25em .4em;
         line-height: 1;

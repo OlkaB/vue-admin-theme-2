@@ -1,16 +1,13 @@
-import WidgetSmall from '@/components/dashboard_elements/WidgetSmall';
-import WidgetCompare from '@/components/dashboard_elements/WidgetCompare';
-import LoaderOverlay from '@/components/LoaderOverlay';
-import RectangularBadge from '@/components/RectangularBadge';
 import AnimateNumber from '@/components/AnimateNumber';
-
+import RectangularBadge from '@/components/BadgeRectangular';
+import WidgetCompare from '@/components/WidgetCompare';
+import WidgetSmall from '@/components/WidgetSmall';
 
 export default {
     install (Vue) {
-        Vue.component('app-widget-small', WidgetSmall);
-        Vue.component('app-widget-compare', WidgetCompare);
-        Vue.component('app-loading', LoaderOverlay);
-        Vue.component('o-badge', RectangularBadge);
-        Vue.component('o-anim-number', AnimateNumber);
+        Vue.component('doz-animate-number', AnimateNumber);
+        Vue.component('doz-badge--rect', RectangularBadge);
+        Vue.component('doz-widget-compare', WidgetCompare);
+        Vue.component('doz-widget-small', WidgetSmall);
     }
 }

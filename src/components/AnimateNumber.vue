@@ -4,7 +4,20 @@
 
 <script>
 export default {
-    props: ['number', 'duration', 'filter'],
+    props: {
+        number: {
+            type: Number,
+            required: true,
+        },
+        duration: {
+            type: Number,
+            required: false,
+        },
+        filter: {
+            type: Number,
+            required: false,
+        }
+    },
     data: function(){
         return {
             initalNum: 0,

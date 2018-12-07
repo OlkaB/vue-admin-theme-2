@@ -38,13 +38,28 @@
 <script>
     export default {
         name: 'WidgetCompare',
-        props: [
-            'cardColor',
-            'cardTitle',
-            'progressVal',
-            'data',
-            'cardFooterTxt'
-        ]
+        props: {
+            cardColor: {
+                type: String,
+                required: true,
+            },
+            cardTitle: {
+                type: String,
+                required: true,
+            },
+            progressVal: {
+                type: Number,
+                required: true,
+            },
+            data: {
+                type: Object,
+                required: true,
+            },
+            cardFooterTxt: {
+                type: String,
+                required: false,
+            }
+        }
     }
 </script>
 

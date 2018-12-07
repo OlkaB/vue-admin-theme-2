@@ -5,7 +5,7 @@ import router from './router/router'
 import VueResource from 'vue-resource'
 Vue.use(VueResource);
 import store from './store'
-import './registerServiceWorker'
+// import './registerServiceWorker'
 import App from './App.vue'
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import '@mdi/font/css/materialdesignicons.css'

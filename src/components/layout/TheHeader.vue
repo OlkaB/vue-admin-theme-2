@@ -1,22 +1,22 @@
 <template>
     <div>
-        <app-nav-drawer></app-nav-drawer>
-        <app-header-toolbar></app-header-toolbar>
+        <doz-nav-drawer></doz-nav-drawer>
+        <doz-header-toolbar></doz-header-toolbar>
 
     </div>
 </template>
 
 <script>
     import { menuItemsData } from '@/mixins/MenuItems';
-    import NavigationDrawer from '@/components/layout/partials/NavigationDrawer';
+    import HeaderNavigationDrawer from '@/components/layout/partials/HeaderNavigationDrawer';
     import HeaderToolbar from '@/components/layout/partials/HeaderToolbar';
 
     export default {
         name: 'Header',
         mixins: [menuItemsData],
         components: {
-            'app-nav-drawer': NavigationDrawer,
-            'app-header-toolbar': HeaderToolbar
+            'doz-nav-drawer': HeaderNavigationDrawer,
+            'doz-header-toolbar': HeaderToolbar
         },
         data () {
             return {

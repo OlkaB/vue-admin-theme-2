@@ -6,9 +6,9 @@
                     <small class="text-muted uppercase" v-if="cardTitle">{{cardTitle}}</small>
                     <small v-else>&nbsp;</small>
                     <v-icon class="pull-right" v-bind:color="cardIconColor" v-if="cardIcon">mdi-{{cardIcon}}</v-icon>
-                    <o-badge class="pull-right" v-if="badgeTitle" :badgeColor="badgeColor" :class="badgeClass ? badgeClass : ''">
+                    <doz-badge--rect class="pull-right" v-if="badgeTitle" :badgeColor="badgeColor" :class="badgeClass ? badgeClass : ''">
                         {{badgeTitle}}
-                    </o-badge>
+                    </doz-badge--rect>
 
                     <v-layout row align-center>
                         <h1 class="display-2 font-weight-medium" v-bind:class="mainInfoColor + '--text'">
@@ -30,15 +30,39 @@
 <script>
     export default {
         name: 'WidgetSmall',
-        props: [
-            'cardTitle',
-            'cardIcon',
-            'cardIconColor',
-            'badgeTitle',
-            'badgeColor',
-            'badgeClass',
-            'mainInfoColor',
-            'cardFooterTxt'
-        ]
+        props: {
+            cardTitle: {
+                type: String,
+                required: true,
+            },
+            cardIcon: {
+                type: String,
+                required: false,
+            },
+            cardIconColor: {
+                type: String,
+                required: false,
+            },
+            badgeTitle: {
+                type: String,
+                required: false,
+            },
+            badgeColor: {
+                type: String,
+                required: false,
+            },
+            badgeClass: {
+                type: String,
+                required: false,
+            },
+            mainInfoColor: {
+                type: String,
+                required: false,
+            },
+            cardFooterTxt: {
+                type: String,
+                required: false,
+            },
+        },
     }
 </script>
